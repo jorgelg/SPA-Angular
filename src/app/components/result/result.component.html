@@ -1,0 +1,16 @@
+<h1>
+    Resultados de la búsqueda: <small>{{termino}}</small>
+    <a [routerLink]="['/heroes']" class="btn btn-outline-primary float-right">Limpiar Busqueda</a>
+</h1>
+
+<div class="row animated fadeIn fast" *ngIf="heroes.length==0">
+    <div class="col-md-12">
+        <div class="alert alert-primary" role="alert">
+            No se encontraron resultados para: {{termino}}
+        </div>
+    </div>
+</div>
+
+<div class="card-columns">
+    <app-heroe-tarjeta [heroe]="heroe" [Indice]="heroe.id" *ngFor="let heroe of heroes"></app-heroe-tarjeta>
+</div>
