@@ -12,12 +12,13 @@ import { ResultComponent } from './components/result/result.component';
 // import { PageNotFoundComponent } from './';
 
 const ROUTES: Routes = [
+    {path: '', component: HomeComponent}, // Ruta por defecto e inicial
     { path: 'home', component: HomeComponent },
     { path: 'about', component: AboutComponent },
     { path: 'heroes', component: HeroesComponent },
     { path: 'heroe/:id', component: HeroeComponent},
     { path: 'result/:termino', component: ResultComponent},
-    { path: '**', component: ErrorComponent },
+    { path: '**', component: ErrorComponent },  // manejo de errores antes cualquier eventualidad o mal uso
 ];
 
 export const APP_ROUTING = RouterModule.forRoot(ROUTES);
